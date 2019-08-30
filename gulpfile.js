@@ -64,6 +64,8 @@ gulp.task('default', function () {
   gulp.watch(["./dev/sass/*.scss","./dev/sass/**/*.scss"], ['sass']).on('change', reload);
   gulp.watch(["dev/img/*/*"], ["moveImg"]).on('change', reload);
   gulp.watch(["dev/php/*"], ["php"]).on('change', reload);
+  //全部存一遍
+  gulp.watch(["dev/*.html" , "dev/**/*.html"] , ['template','sass','concat',"moveImg","php"]).on('load', reload);
 
 });
 

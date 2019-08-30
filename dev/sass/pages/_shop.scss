@@ -1,0 +1,396 @@
+$lblue:#d8ecea;
+
+@mixin pseudo ($name,$content,$w,$h,$display:block){
+  &:#{$name}{
+    content:'#{$content}';
+    width: $w;
+    height:$h ;
+    display:$display;
+    @content
+  }  
+}
+
+$viewpoints:(
+ 
+    xlarge:1200px,
+    large:992px,
+    medium:768px,
+    small:767px
+);
+
+@mixin responds($respond){
+    @each $breakpoint,$width in $viewpoints{
+        @if $respond == $breakpoint{
+            @if $respond ==small{
+                @media all and (max-width:$width){
+                    @content;
+                }
+            }@else{
+                @media all and (min-width:$width){
+                    @content;
+                }
+            }
+        }
+    }
+}
+// ====================================
+.shop{
+    background-color:$lblue ;
+    .container{
+        max-width:1200px;
+        box-sizing:border-box;
+        padding: 10px;
+        margin: auto;
+        position:relative;
+    }
+    
+    .banner{
+        text-align: center;
+        height: 500px;
+        h1{
+            font-size: $h1_fz;
+            background-image: url('../img/shop/titleCloud.png');
+            background-repeat: no-repeat;
+            // width: 420px;
+            height: 203px;
+            margin: auto;
+        }
+        p{
+            font-size: $lg_fz;
+        }
+    }
+}
+
+
+
+// 背景會飄的雲跟熱氣球
+.shop {
+    .cloud{
+        width: 150px;
+    }
+    .balloon{
+        width: 100px;
+    }
+}
+
+// ===========================
+
+//整個大區塊 全屏
+.shop_area{
+    width: 100%;
+    background-image: url('../img/shop/shop_bg.png');
+    background-position:center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+    position:relative;
+    .container{
+        @include responds(medium){
+            padding: 0 20px;
+        }
+        @include responds(xlarge){
+            padding: 0 50px;
+        }
+        
+        @include pseudo(before,null,100%,0){
+            background-image: url(../img/shop/tent.png);
+            background-repeat: no-repeat;
+            background-position:center;
+            position:absolute;
+            z-index: 1;
+            top: 0%;
+            left: 0;
+            padding-bottom: 180px;
+            background-size: cover;
+            @include responds(medium){
+                padding-bottom: 150px;
+            }
+        }
+    }
+//房子裡面那塊
+    .wrap{
+        padding: 250px 10px 10px 10px;
+        background-color: #fdf6e7;
+        border-radius:160px 160px 40px 40px;
+        box-shadow: 7px 7px 0 1px #777;
+        position:relative;
+    }
+}
+
+//lights
+.shop_area{
+    .lights{
+        display:flex;
+        position:absolute;
+        left: 0;
+        top: 150px;
+        @include responds(medium){
+            top: 140px;
+        }
+        
+       
+        img{
+            width: (100% / 3);
+        }
+    }
+}
+
+//選圖案
+.choose_pic{
+    h2{
+        display:none;
+    }
+    .intro{
+        padding: 10px;
+    }
+}
+
+.choose_pic_wrap{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    border-bottom:3px solid brown;
+    
+    .item{
+        width: 40%;
+        box-sizing:border-box;
+        padding: 20px;
+        cursor: pointer;
+        text-align: center;
+        @include responds(medium){
+            width: 15%;
+            img{
+                width: 100%;
+            }
+        }
+        p{
+            padding: 10px 0;
+            width: 60%;
+            margin: auto;
+            text-align: center;
+        }
+    }
+  
+}
+//選擇背景圖片
+.choose_bgpic{
+    margin: 30px 0;
+    .intro{
+        padding: 10px;
+    }
+}
+//選擇商品
+.choose_product{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    img{
+        width: 100%;
+    }
+    .item{
+        width: 100%;
+        text-align: center;
+        border:2px solid saddlebrown;
+        background-color: #fff;
+        position:relative;
+        margin: 30px 0;
+        @include responds(medium){
+            width: 22%;
+        }
+        @include pseudo(before,null,100%,32px){
+            background-image: url(../img/shop/sloth.png);
+            background-repeat: no-repeat;
+            position:absolute;
+            top: 0px;
+            transition:top 0.5s;
+            
+        }
+        &:hover {
+            &:before{
+                top:-35px;
+            }
+        }
+        h3{
+            font-size: $h3_fz;
+            padding: 10px;
+        }
+    }
+  
+}
+//修改數量
+.choose_product{
+    .number{
+        display:flex;
+        justify-content: center;
+        -webkit-appearance: none;
+        button{
+            color:#fff;
+            font-weight: bold;
+            font-size: $lg_fz;
+            width: 25px;
+            height: 25px;
+            background-color:#5f4f23;
+            border:none;
+            border-radius: 5px
+        }
+        input{
+            padding:5px 5px;  border:0 none;
+            width: 70px;
+            text-align: center;
+        }
+    }
+    
+}
+
+.deco{
+    width: 100%;
+    height: 24px;
+
+}
+.deco_top{
+    background-image: url('../img/shop/prod_deco_top.jpg');
+    position:relative;
+    background-repeat: repeat-x;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+
+.deco_bottom{
+    background-image: url('../img/shop/prod_deco.jpg');
+}
+
+
+.prod_img{
+    position:relative;
+    .pic_chosen{
+        position:absolute;
+        width: 30%;
+    }
+}
+
+@mixin picChosen($top,$left,$right){
+    top: $top;
+    left: $left;
+    right: $right;
+    margin:auto;
+}
+.pic_chosen_bag{
+    @include picChosen(52%,0,0)
+}
+
+.pic_chosen_cup{
+    @include picChosen(37%,0,10%)
+}
+
+.pic_chosen_hat{
+    @include picChosen(21%,0,0)
+}
+
+.pic_chosen_pillow{
+    @include picChosen(34%,0,0)
+}
+// =====================================
+// 商品詳情
+.prod_detail{
+    display:none;
+    position:fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background-color:rgba(0,0,0,0.5);
+    z-index: 2;
+   .detail_container{
+       width: 90%;
+       position:fixed;
+       @include responds(medium){
+            width: 50%;
+       }
+       @include responds(large){
+        width:30%;
+   }
+        background-color: lightblue;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin:auto;
+        border-radius:10px;
+        box-sizing:border-box;
+        padding: 10px;
+   }
+} 
+.back_button{
+    display:block;
+    border-radius:50%;
+    background-color: #ccc;
+    box-shadow:2px 2px 0 1px #333;
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 10px;
+    right: 10px;
+    line-height: 2;
+    text-align: center;
+}
+.prod_detail{
+    img{
+        width: 100%;
+    }
+    .wrap{
+        width: 95%;
+        margin: auto;
+        @include responds(medium){
+            width: 80%;
+        }
+    }
+    .title{
+        background-image: url(../img/shop/tent_small.png);
+        background-repeat:no-repeat;
+        background-size: contain;
+        position:relative;
+        top: 50px;
+        z-index: 1;
+        height: 0;
+        padding-bottom: 33%;
+        p{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+        }
+    }
+    .prod_img{
+        background-color: #fff;
+        box-sizing:border-box;
+        border-left:10px solid #a08d7c;
+        border-right:10px solid #a08d7c;
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+    }
+    .prod_text{
+        background-color: #f7d5b3;
+        margin-bottom: 20px;
+        position:relative;
+        background-image: url(../img/shop/wood_pattern.png);
+        p{
+            padding:30px 10px ;
+        }
+    }
+}
+//裝飾的那個標誌
+.shop_area{
+    @media screen and (min-width:1720px){
+        @include pseudo(after,null ,222px ,367px ){
+            background-image: url(../img/shop/signBoard.png);
+            position:absolute;
+            bottom: 0;
+            right: 5%;
+        }
+    }
+       
+
+    
+}
+

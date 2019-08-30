@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>動物商城</title>
+    @@include('template/csslink.html',{"csslink":"css/style.css"})
+    <style>
+        /* *{
+            outline:1px solid #f00;
+        } */
+    </style>
+</head>
+<body class="shop" id="shop">
+    @@include('template/header.html')
+    <section class="banner">
+        <div class="container">
+            <h1>動物商城</h1>
+            <p>在這裡你可以印製專屬商品哦~趕快來逛逛吧！</p>
+        </div>
+        <div class="balloon">
+            <img src="../img/shop/balloon.png" alt="">
+        </div>
+        <div class="cloud">
+            <img src="../img/shop/cloud.png" alt="">
+        </div>
+    </section>
+    <section class="shop_area" id="shop_area">
+        <div class="container">
+            <div class="wrap">
+                <div class="lights">
+                    <img src="../img/shop/lights.png" alt="">
+                    <img src="../img/shop/lights.png" alt="">
+                    <img src="../img/shop/lights.png" alt="">
+                </div>
+                <div class="choose_pic">
+                    <h2 >選擇商品</h2>
+                    <p class='intro'>請選擇您想要印製的圖案:</p>
+                    <div class="choose_pic_wrap">
+                        <div class="item">
+                            <img src="https://picsum.photos/100/140/?random=1">
+                            <p>我的動物</p>
+                        </div>
+                        <div class="item">
+                            <img src="https://picsum.photos/100/140/?random=1">
+                            <p>選美No.1</p>
+                        </div>
+                        <div class="item">
+                            <img src="https://picsum.photos/100/140/?random=1">
+                            <p>選美No.2</p>
+                        </div>
+                        <div class="item">
+                            <img src="https://picsum.photos/100/140/?random=1">
+                            <p>選美No.3</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="choose_bgpic">
+                    <p class="intro">
+                        請選擇圖案是否要背景圖片：
+                        <input type="radio" name="bgpic">我要背景圖片
+                        <input type="radio" name="bgpic">我不要背景圖片
+                    </p>
+                    
+                </div>
+                <div class="choose_product">
+                    <div class="item">
+                        <div class="deco deco_top"></div>
+                        <h3>帆布袋</h3>
+                        <div class="prod_img">
+                            <img class="prod_plain" src="img/shop/bag.png" alt="">
+                            <img class="pic_chosen pic_chosen_bag" src="https://picsum.photos/100/140/?random=1">
+                        </div>
+                        <p class="price">NT$600</p>
+                        <div class="number">
+                            <button @click="input_value_minus">-</button>
+                            <input type="number" :value="input_value" >
+                            <button @click="input_value_add">+</button>
+                        </div>
+                        <a class="btn_cloud" @click="show_detail">查看詳情@@include('template/btn_sp.html')</a>
+                        <a class="btn_cloud">加入購物車@@include('template/btn_sp.html')</a>
+                        <div class="deco deco_bottom"></div>
+                    </div>
+                    <div class="item">
+                        <div class="deco deco_top"></div>
+                        <h3>馬克杯</h3>
+                        <div class="prod_img">
+                            <img class="prod_plain" src="img/shop/cup.png" alt="">
+                            <img class="pic_chosen pic_chosen_cup" src="https://picsum.photos/100/140/?random=1">
+                        </div>
+                        <p class="price">NT$600</p>
+                        <div class="number">
+                            <button>-</button>
+                            <input type="number" value="1">
+                            <button>+</button>
+                        </div>
+                        <a class="btn_cloud">查看詳情@@include('template/btn_sp.html')</a>
+                        <a class="btn_cloud">加入購物車@@include('template/btn_sp.html')</a>
+                        <div class="deco deco_bottom"></div>
+                    </div>
+                    <div class="item">
+                        <div class="deco deco_top"></div>
+                        <h3>棒球帽</h3>
+                        <div class="prod_img">
+                            <img class="prod_plain" src="img/shop/hat.png" alt="">
+                            <img class="pic_chosen pic_chosen_hat" src="https://picsum.photos/100/140/?random=1">
+                        </div>
+                        <p class="price">NT$600</p>
+                        <div class="number">
+                            <button>-</button>
+                            <input type="number" value="1" >
+                            <button>+</button>
+                        </div>
+                        <a class="btn_cloud">查看詳情@@include('template/btn_sp.html')</a>
+                        <a class="btn_cloud">加入購物車@@include('template/btn_sp.html')</a>
+                        <div class="deco deco_bottom"></div>
+                    </div>
+                    <div class="item">
+                        <div class="deco deco_top"></div>
+                        <h3>大抱枕</h3>
+                        <div class="prod_img">
+                            <img class="prod_plain" src="img/shop/pillow.png" alt="">
+                            <img class="pic_chosen pic_chosen_pillow" src="https://picsum.photos/100/140/?random=1">
+                        </div>
+                        <p class="price">NT$600</p>
+                        <div class="number">
+                            <button>-</button>
+                            <input type="number" value="1">
+                            <button>+</button>
+                        </div>
+                        <a class="btn_cloud">查看詳情@@include('template/btn_sp.html')</a>
+                        <a class="btn_cloud">加入購物車@@include('template/btn_sp.html')</a>
+                        <div class="deco deco_bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 商品詳情 -->
+    <div class="prod_detail" id="prod_detail">
+        <div class="detail_container">
+            <button class="back_button">X</button>
+            <div class="wrap">
+                <div class="title">
+                    <p>商品詳情</p>
+                </div>
+                <div class="prod_img">
+                    <img class="prod_plain" src="img/shop/pillow.png" alt="">
+                    <img class="pic_chosen pic_chosen_pillow" src="https://picsum.photos/100/140/?random=1">
+                </div>
+                <div class="prod_text">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, fugiat!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, fugiat!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, fugiat</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('template/footer.html')
+
+
+ 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+        <script>
+            new Vue({           
+            el:"#shop_area",    
+            data:{          
+                input_value:1, 
+            },
+            methods:{
+                input_value_add(){this.input_value++},
+                input_value_minus(){this.input_value>0?this.input_value--:this.input_value=0},
+                show_detail(){document.querySelector(".prod_detail").style.display="block"},
+            },
+            
+        });
+           
+        let backButton=document.querySelector('.back_button');
+        backButton.onclick=function(){
+                document.querySelector('.prod_detail').style.display='none';
+            };
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+*{
+  // outline: 1px solid #f00; 
+}
+
+.bd_member{
+  padding-top:90px;
+  background-image:url('../img/member/member_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  h2{
+    text-align: center;
+  }
+
+  section{
+    padding: 20px 0px;
+
+    img{
+      vertical-align: middle;
+      width: 100%;
+      max-width: 300px;
+    }
+
+  }
+
+  // .container{
+  //   min-height: calc(75vh);
+  // }
+  
+}
+
+
+//主畫面切換
+.member_tab{
+  @include btn_cloud(100px,$col_btn_blue);
+
+  .tablink_color{
+    background:$col_btn_blue;
+    color: $col_white;
+  }
+
+}
+
+//
+.baic_btn{
+  @include btn_cloud(100px,$col_btn_orange);
+}
+
+
+
+// 桌機
+@media screen and (min-width: 768px){
+
+  .bd_member{
+    section{
+      padding-bottom: 50px;
+    }
+  }
+}
+// 桌機
+
+
+.my_baic,.my_gamerecord,.my_animal{
+  margin: 20px 0px;
+}
+
+.my_baic,.my_gamerecord,.my_animal,.my_love , .my_receive ,.my_order{
+  border: 5px solid #fff;
+  background-color: #fde5a4;
+  // margin: 20px 0px;
+  padding: 10px 0px;
+  box-sizing: border-box;
+}
+
+
+.baic_pic,.gamerecord_pic,.myanimal_pic,.upfile{
+  text-align: center;
+}
+
+.member_title{
+  img{
+    width: 5%;
+  }
+}
+
+
+
+.member_basic{
+  .myanimal_txt{
+    text-align: center;
+  }
+
+  .baic_btn{
+  text-align: right;
+}
+}
+
+
+.member_order{
+  //整筆訂單
+  .myorder_item{
+    border-bottom: 2px dotted #157E8F;
+  }
+
+  //訂單明細 點了要打開
+  .myorder_item_detail{
+    margin: 20px;
+    border: 2px solid $col_btn_blue;
+    // display: none;
+    background-image: url('../img/member/m_title_icon.png');
+    // border-radius: 20px;
+    background-repeat:no-repeat;
+    background-position:top right;
+  
+
+      //商品名稱
+      .item_title{
+        p{
+          background-color: $col_btn_blue;
+          border-radius: 20px;
+          color: #fff;
+        }
+      }
+
+    }
+}
+
+.member_receive{
+  .myreceive_item{
+    border-bottom: 2px dotted #157E8F;
+  }
+}
+
+
+.baic_txt td , .gamerecord_txt td{
+  width: 10%;
+  padding: 10px;
+}

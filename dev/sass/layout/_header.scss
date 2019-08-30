@@ -1,0 +1,291 @@
+@import "../base/color";
+
+.main_menu{
+
+    min-width: 0;
+    background-color: rgba(240,240,240,0.8);
+    padding: 5px 10px 5px 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    box-sizing: border-box;
+    
+    .hcontainer{
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+
+
+    .logo{
+        width: 45px;
+        height: 45px;
+        display: block;
+        text-align: center;
+        img{
+            height: 100%;
+        }
+    }
+
+    .head_title{
+        h1{
+            color: $col_black;
+            font-weight: bold;
+        }
+    }
+
+
+    .hb{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        .bar1{
+            width: 35px;
+            height: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+        .bar2{
+            width: 35px;
+            height: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 5px 0px 0px 0px;
+            transition: 0.4s;
+        }
+        .bar3{
+            width: 35px;
+            height: 5px;
+            background-color: rgba(0, 0, 0, 0);
+            margin: 0px 0px 0px 0px ;
+            transition: 0.4s;
+        }
+        .bar4{
+            width: 35px;
+            height: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 0px 0px 5px 0px ;
+            transition: 0.4s;
+        }
+    }
+
+    
+
+    .menu_nav{
+        position: absolute;
+        width: 80%;
+        height: calc(100vh - 100%);
+        top: 100%;
+        left: -100%;
+        background-color: $col_modify_boxshadow;
+        transition: 0.5s;
+
+        li{
+            display: flex;
+            justify-content: center;
+            line-height: 60px;
+            margin: 10px;
+            border-bottom: 3px solid rgba(240,240,240,0.5);
+        
+            .menu_icon{
+                width: 40px;
+                height: 40px;
+                display: flex;
+
+                img{
+                    width: 40px;
+                    height: 40px;
+                    align-self: center;
+                }
+            }
+
+            .text{
+                color: $col_white;
+                display: flex;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 0px 20px;
+                align-items: center;
+            }
+            .text.now{
+                color: $col_black;
+            }
+        }
+        .member_box{
+            margin-top: 50px;
+
+            .member_icon{
+                width: 30px;
+                height: 30px;
+                display: flex;
+
+                img{
+                    width: 100%;
+                    align-self: center;
+                }
+            }
+        }
+    }
+    
+}
+
+
+.hb_cover{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0%;
+    display: none;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+
+#menu_check{
+    display: none;
+    
+    &:checked ~ .main_menu .hb .bar1{
+        width: 30px;
+        transform: translate(2px, 0px);
+        border-radius: 2px;
+        background-color: $col_btn_orange;
+    }
+    &:checked ~ .main_menu .hb .bar2{
+        transform: rotate(-45deg) translate(-2px, 2px);
+        border-radius: 2px;
+        background-color: $col_btn_orange;
+
+    }
+    &:checked ~ .main_menu .hb .bar3{
+        width: 15px;
+        transform: rotate(45deg) translate(5px, -8px);
+        border-radius: 2px;
+        background-color: $col_btn_orange;
+
+    }
+    &:checked ~ .main_menu .hb .bar4{
+        width: 30px;
+        transform: translate(2px, 5px);
+        border-radius: 2px;
+        background-color: $col_btn_orange;
+
+    }
+    &:checked ~ .main_menu nav{
+        left: 0;
+    }
+    &:checked ~ .hb_cover{
+        display: block;
+        opacity: 1;
+        transition: 0.5s;
+    }
+}
+
+
+@media all and (min-width:1200px){
+    
+.main_menu{
+    
+
+    .hb{
+        display: none;
+    }
+    .hcontainer{
+        // max-width: 1200px;
+        display: block;
+        text-align: center;
+
+        .head_title{
+            vertical-align: middle;
+            h1{
+                font-size: 24px;
+            }
+        }
+    }
+
+    .logo{
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .head_title{
+        align-self: flex-start;
+        display: inline-block;
+    }
+
+    .menu_nav{
+        position: initial;
+        width: initial;
+        height: initial;
+        top: initial;
+        left: initial;
+        background-color: initial;
+        transition: 0.5s;
+        display: inline-block;
+        margin-left: 150px;
+
+        .menu_list{
+            display: inline-block;
+            font-size: 0;
+            vertical-align: middle;
+            li{
+                a{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    margin: 0;
+                }
+                margin: 0px 20px;
+            }
+        }
+
+
+        li{
+            display: inline-block;
+            line-height: initial;
+
+            border-bottom: 3px solid rgba(240,240,240,0.5);
+
+            .text{
+                color: $col_black;
+
+            }
+        }
+
+        .member_box{
+            margin: 0px 0px 0px 100px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+            li{
+                margin: 0px 10px;
+                .member_icon{
+                    display: block;
+                    width: 100%;
+                    height: initial;
+                    img{
+                        width: initial;;
+                    }
+                }
+                .text{
+                    display: block;
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+
+}
+}

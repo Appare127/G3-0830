@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @@include('template/csslink.html')
+
+    <title>改造動物</title>
+</head>
+<body class="modify_body">
+    
+    @@include('template/header.html')
+
+    <section class="modify_banner">
+        <div class="container">
+            <div class="cloud">
+                <img src="img/modify/banner_cloud.png" alt="">
+                <h1>動物改造</h1>
+            </div>
+            <div class="about">
+                <img src="img/modify/guide_animal.png" alt="">
+                <p>請創造出自己的動物</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="modify">
+        <div class="container">
+
+            <div class="part_box">
+                <div class="text">
+                    <p>動物名字:</p>
+                    <input type="text" name="" id="">
+                </div>
+
+                <div class="pic">
+                    <img src="img/modify/example_animal.png" alt="">
+                </div>
+
+                <div class="tool">
+                    <img src="img/modify/icon_plus.png" alt="">
+                    <img src="img/modify/icon_minus.png" alt="">
+                    <img src="img/modify/icon_rotate.png" alt="">
+                    <img src="img/modify/icon_delete.png" alt="">
+                </div>
+
+                <div class="change_color">
+                    <img src="img/modify/colorbar.png" alt="">
+                </div>
+
+                <div class="btn_box">
+                    <a href="#" class="btn_cloudp">
+                        下一步
+                        @@include('template/btn_sp.html')
+                    </a>
+                    <a href="#" class="btn_cloudb">
+                        修改
+                        @@include('template/btn_sp.html')
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="select_box">
+                <div class="button_box">
+                    <ul class="button_ul">
+                        <li class="button_li"><a href="#" class="button btn_head">頭部</a></li>
+                        <li class="button_li"><a href="#" class="button btn_body">身體</a></li>
+                        <li class="button_li"><a href="#" class="button btn_foot">腳部</a></li>
+                        <li class="button_li"><a href="#" class="button btn_fit">配件</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                
+                <div class="part_box">
+                    <div class="part_scroll">
+                        <div class="part_wrap">
+                            <item class="part_item">
+                                <img src="img/modify/head_giraffe.png" alt="">
+                            </item>
+                            <item class="part_item">
+                                    <img src="img/modify/head_elephant.png" alt="">
+                            </item>
+                            <item class="part_item">
+                                    <img src="img/modify/head_lion.png" alt="">
+                            </item>
+                            <item class="part_item">
+                                    <img src="img/modify/head_tiger.png" alt="">
+                            </item>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="info_box">
+                <div class="info_wrap">
+                    <h3>生存遊戲</h3>
+                    <div class="life_ability">
+                        <p>生命力:</p>
+                        <div class="pic">
+                            <div class="life_bar">
+                                <div class="bar_add"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jump_ability">
+                        <p>跳躍力:</p>
+                        <div class="pic">
+                            <img src="img/modify/icon_life.png" alt="">
+                            <img src="img/modify/icon_life.png" alt="">
+                            <img src="img/modify/icon_life.png" alt="">
+                            <img src="img/modify/icon_life.png" alt="">
+                            <img src="img/modify/icon_life.png" alt="">
+                        </div>
+                    </div>
+                    <h3>適應力</h3>
+                    <div class="evemt_ability">
+                        <canvas class="m_canvas">
+                            
+                        </canvas>
+                    </div>
+                    <p class="hit">提醒:選擇的不同的部位會有不同的能力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @@include('template/login.html')
+    @@include('template/footer.html')
+</body>
+</html>

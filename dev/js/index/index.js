@@ -104,9 +104,9 @@ function reHw() {
        document.getElementsByTagName("svg")[0].style.width= htmlWidth;
        document.getElementsByTagName("svg")[0].style.height= 1280;
        document.getElementsByTagName("svg")[0].viewBox.baseVal.width=490;
-       document.getElementsByTagName("svg")[0].viewBox.baseVal.x=35;
-       document.getElementsByTagName("text")[0].attributes.x.nodeValue =160;
-       document.getElementsByTagName("text")[1].attributes.x.nodeValue =373;
+       document.getElementsByTagName("svg")[0].viewBox.baseVal.x=38;
+       document.getElementsByTagName("text")[0].attributes.x.nodeValue =161;
+       document.getElementsByTagName("text")[1].attributes.x.nodeValue =374;
     
       
       // document.getElementsByTagName("svg")[0].style.height= htmlHeight;

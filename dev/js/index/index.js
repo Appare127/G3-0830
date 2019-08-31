@@ -3,8 +3,6 @@ tl = new TimelineMax({
     repeat: -1,
     repeatDelay: 2
 });
-
-
 var road1 = MorphSVGPlugin.pathDataToBezier("#chemin1", {
     align: "relative",
     offsetX: -50,
@@ -16,7 +14,6 @@ var road2 = MorphSVGPlugin.pathDataToBezier("#chemin2", {
 var road3 = MorphSVGPlugin.pathDataToBezier("#chemin3", {
     align: "relative"
 });
-
 tl
     .staggerFromTo($("#guineapigs > g:not(#yopick)"), .15, {
         rotation: -5
@@ -63,7 +60,6 @@ tl
         delay: 3,
         repeatDelay: 1
     }, 0.6, 0)
-
     .fromTo($('#dancing'), 1, {
         transformOrigin: "center center",
         rotation: -5
@@ -82,160 +78,133 @@ tl
         yoyo: true,
         ease: Circ.easeInOut
     }, 0);
-    
-    function init(){
-        reHw();
-    }
+
+function init() {
+    reHw();
+}
 var htmlWidth = window.innerWidth;
 var htmlHeight = window.innerHeight;
 var svgX = document.getElementsByTagName("svg")[0].viewBox.baseVal.x;
-let homeX = document.getElementsByTagName("text")[0].attributes.x.nodeValue -(-12) ;
-let homeY = document.getElementsByTagName("text")[0].attributes.y.nodeValue -7;
-let backX = document.getElementsByTagName("text")[1].attributes.x.nodeValue -(-12) ;
-let backY = document.getElementsByTagName("text")[1].attributes.y.nodeValue -7 ;
-document.getElementsByTagName("text")[0].attributes.x.textContent=homeX-16;
-document.getElementsByTagName("text")[1].attributes.x.textContent=backX-16;
+let homeX = document.getElementsByTagName("text")[0].attributes.x.nodeValue - (-12);
+let homeY = document.getElementsByTagName("text")[0].attributes.y.nodeValue - 7;
+let backX = document.getElementsByTagName("text")[1].attributes.x.nodeValue - (-12);
+let backY = document.getElementsByTagName("text")[1].attributes.y.nodeValue - 7;
+document.getElementsByTagName("text")[0].attributes.x.textContent = homeX - 16;
+document.getElementsByTagName("text")[1].attributes.x.textContent = backX - 16;
 window.addEventListener("resize", reHw, false);
 window.addEventListener("load", init, false);
 function reHw() {
     htmlWidth = window.innerWidth;
     htmlHeight = window.innerHeight;
-    if (htmlWidth>1627){
-       document.getElementsByTagName("svg")[0].style.width= htmlWidth;
-       document.getElementsByTagName("svg")[0].style.height= 1280;
-       document.getElementsByTagName("svg")[0].viewBox.baseVal.width=490;
-       document.getElementsByTagName("svg")[0].viewBox.baseVal.x=38;
-       document.getElementsByTagName("text")[0].attributes.x.nodeValue =161;
-       document.getElementsByTagName("text")[1].attributes.x.nodeValue =374;
-    
-      
-      // document.getElementsByTagName("svg")[0].style.height= htmlHeight;
-  
-    }else if(htmlWidth>=997){
-        document.getElementsByTagName("svg")[0].style.width= window.innerWidth;
-        document.getElementsByTagName("svg")[0].style.height= window.innerHeight+40;
-        document.getElementsByTagName("svg")[0].viewBox.baseVal.width=310;
-        document.getElementsByTagName("svg")[0].viewBox.baseVal.x=130;
-        document.getElementsByTagName("text")[0].attributes.x.nodeValue =163;
-        document.getElementsByTagName("text")[1].attributes.x.nodeValue =375;
-        homeX = document.getElementsByTagName("text")[0].attributes.x.nodeValue -(-10) ;
-        backX = document.getElementsByTagName("text")[1].attributes.x.nodeValue -(-11) ;
-        console.log("123");
-        
+    if (htmlWidth > 1627) {
+        document.getElementsByTagName("svg")[0].style.width = htmlWidth;
+        document.getElementsByTagName("svg")[0].style.height = 1280;
+        document.getElementsByTagName("svg")[0].viewBox.baseVal.width = 490;
+        document.getElementsByTagName("svg")[0].viewBox.baseVal.x = 38;
+        document.getElementsByTagName("text")[0].attributes.x.nodeValue = 161;
+        document.getElementsByTagName("text")[1].attributes.x.nodeValue = 374;
+        // document.getElementsByTagName("svg")[0].style.height= htmlHeight;
+    } else if (htmlWidth >= 997) {
+        document.getElementsByTagName("svg")[0].style.width = window.innerWidth;
+        document.getElementsByTagName("svg")[0].style.height = window.innerHeight + 40;
+        document.getElementsByTagName("svg")[0].viewBox.baseVal.width = 310;
+        document.getElementsByTagName("svg")[0].viewBox.baseVal.x = 130;
+        document.getElementsByTagName("text")[0].attributes.x.nodeValue = 163;
+        document.getElementsByTagName("text")[1].attributes.x.nodeValue = 375;
+        homeX = document.getElementsByTagName("text")[0].attributes.x.nodeValue - (-10);
+        backX = document.getElementsByTagName("text")[1].attributes.x.nodeValue - (-11);
     }
-    
-
-    
-    
-    if (htmlWidth<997){
-        document.getElementsByTagName("svg")[0].style.width= htmlWidth;
-        document.getElementsByTagName("svg")[0].style.height= htmlHeight;
-        
-        document.getElementsByTagName("svg")[0].viewBox.baseVal.x=130;
-        document.getElementsByTagName("svg")[0].viewBox.baseVal.width=100;
-        document.getElementsByTagName("svg")[0].viewBox.baseVal.y=0;
-        // document.getElementsByTagName("svg")[0].viewBox.baseVal.height= 0.1;
-        
-        document.getElementsByTagName("text")[0].attributes.x.nodeValue=124;
-        document.getElementsByTagName("text")[1].attributes.x.nodeValue=214;
-       
-        
-        homeX=135;
-        backX=225;
-        
-     }
-
-
-
-
-
-
-
- blob1 = createBlob({
-    element: document.querySelector("#path1"),
-    numPoints: 10,
-    centerX: homeX+5,
-    centerY: homeY,
-    minRadius: 22,
-    maxRadius: 28,
-    minDuration: 1,
-    maxDuration: 2
-});
- blob2 = createBlob({
-    element: document.querySelector("#path2"),
-    numPoints: 10,
-    centerX: homeX+5,
-    centerY: homeY,
-    minRadius: 22,
-    maxRadius: 28,
-    minDuration: 2,
-    maxDuration: 3
-});
- blob3 = createBlob({
-    element: document.querySelector("#path3"),
-    numPoints: 20,
-    centerX: homeX+5,
-    centerY: homeY,
-    minRadius: 22,
-    maxRadius: 28,
-    minDuration: 1.5,
-    maxDuration: 2.5
-});
-
- blob4 = createBlob({
-    element: document.querySelector("#path4"),
-    numPoints: 10,
-    centerX: homeX+5,
-    centerY: homeY,
-    minRadius: 20,
-    maxRadius: 22,
-    minDuration: 1000,
-    maxDuration: 1000
-});
-
- blob5 = createBlob({
-    element: document.querySelector("#path5"),
-    numPoints: 10,
-    centerX: backX+5,
-    centerY: backY,
-    minRadius: 22,
-    maxRadius: 28,
-    minDuration: 1,
-    maxDuration: 2
-});
- blob6 = createBlob({
-    element: document.querySelector("#path6"),
-    numPoints: 10,
-    centerX:backX+5,
-    centerY: backY,
-    minRadius: 22,
-    maxRadius: 30,
-    minDuration: 2,
-    maxDuration: 3
-});
- blob7 = createBlob({
-    element: document.querySelector("#path7"),
-    numPoints: 20,
-    centerX: backX+5,
-    centerY: backY,
-    minRadius: 22,
-    maxRadius: 28,
-    minDuration: 1.5,
-    maxDuration: 2.5
-});
-
- blob8 = createBlob({
-    element: document.querySelector("#path8"),
-    numPoints: 10,
-    centerX: backX+5,
-    centerY: backY,
-    minRadius: 20,
-    maxRadius: 22,
-    minDuration: 1000,
-    maxDuration: 1000
-});
-}
-
+    if (htmlWidth < 997) {
+        document.getElementsByTagName("svg")[0].style.width = htmlWidth;
+        document.getElementsByTagName("svg")[0].style.height = htmlHeight;
+        document.getElementsByTagName("svg")[0].viewBox.baseVal.x = 130;
+        document.getElementsByTagName("svg")[0].viewBox.baseVal.width = 100;
+        document.getElementsByTagName("svg")[0].viewBox.baseVal.y = 0;
+        document.getElementsByTagName("text")[0].attributes.x.nodeValue = 124;
+        document.getElementsByTagName("text")[1].attributes.x.nodeValue = 214;
+        homeX = 135;
+        backX = 225;
+    }
+    blob1 = createBlob({
+        element: document.querySelector("#path1"),
+        numPoints: 10,
+        centerX: homeX + 5,
+        centerY: homeY,
+        minRadius: 22,
+        maxRadius: 28,
+        minDuration: 1,
+        maxDuration: 2
+    });
+    blob2 = createBlob({
+        element: document.querySelector("#path2"),
+        numPoints: 10,
+        centerX: homeX + 5,
+        centerY: homeY,
+        minRadius: 22,
+        maxRadius: 28,
+        minDuration: 2,
+        maxDuration: 3
+    });
+    blob3 = createBlob({
+        element: document.querySelector("#path3"),
+        numPoints: 20,
+        centerX: homeX + 5,
+        centerY: homeY,
+        minRadius: 22,
+        maxRadius: 28,
+        minDuration: 1.5,
+        maxDuration: 2.5
+    });
+    blob4 = createBlob({
+        element: document.querySelector("#path4"),
+        numPoints: 10,
+        centerX: homeX + 5,
+        centerY: homeY,
+        minRadius: 20,
+        maxRadius: 22,
+        minDuration: 1000,
+        maxDuration: 1000
+    });
+    blob5 = createBlob({
+        element: document.querySelector("#path5"),
+        numPoints: 10,
+        centerX: backX + 5,
+        centerY: backY,
+        minRadius: 22,
+        maxRadius: 28,
+        minDuration: 1,
+        maxDuration: 2
+    });
+    blob6 = createBlob({
+        element: document.querySelector("#path6"),
+        numPoints: 10,
+        centerX: backX + 5,
+        centerY: backY,
+        minRadius: 22,
+        maxRadius: 30,
+        minDuration: 2,
+        maxDuration: 3
+    });
+    blob7 = createBlob({
+        element: document.querySelector("#path7"),
+        numPoints: 20,
+        centerX: backX + 5,
+        centerY: backY,
+        minRadius: 22,
+        maxRadius: 28,
+        minDuration: 1.5,
+        maxDuration: 2.5
+    });
+    blob8 = createBlob({
+        element: document.querySelector("#path8"),
+        numPoints: 10,
+        centerX: backX + 5,
+        centerY: backY,
+        minRadius: 20,
+        maxRadius: 22,
+        minDuration: 1000,
+        maxDuration: 1000
+    });}
 function createBlob(p) {
     var s = [];
     var q = p.element;

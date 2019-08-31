@@ -1,74 +1,60 @@
 
- 
+html{overflow: hidden;
     body {
         background: #035432;
-    }
-
-    body svg {
-        display: block;
-        /* height: 121%;  */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 120%;
-       
-        margin-left: -10%;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
-        outline: 1px red  solid;
     }
- 
+}
+
+@media screen and (min-width: 992px){
+    body svg{
+    
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+  
+      width:  1080px;
+    }
+
+}
+
+ svg {
+    display: block;
+    
+    position: relative;
+    top: 0%;
+    left: 0%;
+    bottom: 0;
+    right: 0%;
+    margin: auto;
+    
+     
+    outline: 1px red solid;
     
 
-    
-    .controls {
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 15px;
-    }
-    
-    .dot {
-        fill: #1a237e;
-        fill-opacity: 0.3;
-        stroke: #1a237e;
-        stroke-width: 1;
-        vector-effect: non-scaling-stroke;
-    }
     #yopick #skin path {
         fill: #8c5c3b;
     }
 
-    #credits {
-        position: fixed;
-        bottom: 10px;
-        width: 100px;
-        height: 30px;
-        background: red;
-        z-index: 999;
-        left: calc(50% - 50px);
-        border-radius: 8px;
-        text-align: center;
-    }
 
-    div a {
-        color: white;
-        text-align: center;
-        margin-top: 5px;
-        text-decoration: none;
-        line-height: 27px;
-        font-size: 19px;
-    }
-
- 
     .cls-1 {
         isolation: isolate;
-        
+
     }
 
     .cls-2 {
         fill: url(#linear-gradient);
+
         /*山背景*/
-        
+
     }
 
     .cls-3 {
@@ -79,20 +65,20 @@
     .cls-4 {
         fill: #3a563b;
         /*樹上樹葉*/
-        
+
     }
 
     .cls-5 {
         fill: #52752d;
         /*地下光亮草地*/
-        
-        
+
+
     }
 
     .cls-6 {
         fill: #3d5620;
         /*地下暗草地*/
-        
+
     }
 
     .cls-7 {
@@ -178,6 +164,7 @@
 
     .cls-27 {
         fill: url(#linear-gradient-3);
+
     }
 
     .cls-28 {
@@ -374,19 +361,19 @@
 
     .cls-76 {
         fill: #623f2b;
-      
+
     }
 
     .cls-77 {
         fill: #4d3222;
-       
+
 
     }
 
     .cls-78 {
 
         fill: #523324;
-      
+
     }
 
     .cls-79 {
@@ -421,144 +408,498 @@
         stroke-miterlimit: 10;
         stroke-width: 2px;
     }
+
     .cls-test {
         stroke: #ffffff;
         stroke-miterlimit: 10;
         stroke-width: 2px;
     }
-    .animal_ele_0{fill:#889097;}
-    .animal_ele_1{fill:#F8F1B5;}
-    .animal_ele_2{fill:#70797E;}
-    .animal_ele_3{opacity:0.5;fill:#889097;enable-background:new    ;}
-    .animal_ele_4{fill:#584942;}
-    .animal_ele_5{fill:#96A0A7;}
-    .animal_ele_6{fill:#B9C2CF;}
-    .animal_ele_7{fill:#ADB5C0;}
-    .animal_ele_8{fill:#E9C8B1;}
-    .animal_ele_9{fill:#414042;}
-    .animal_ele_10{fill:#EFF0F0;}
-    .animal_ele_11{fill:#040000;}
 
-    .animal_risu_0{fill:#26324C;}
-    .animal_risu_1{fill:#EAEAEA;}
-    .animal_risu_2{opacity:0.5;fill:#26324C;}
-    .animal_risu_3{fill:#212D42;}
-    .animal_risu_4{fill:#2D3958;}
-    .animal_risu_5{fill:#A99983;}
-    .animal_risu_6{fill:#231F20;}
-    .animal_risu_7{fill:#FFFFFF;}
-    .animal_risu_8{opacity:0.5;fill:#2D3958;}
+    .animal_ele_0 {
+        fill: #889097;
+    }
 
-    .animal_shishiko_0{fill:#FF9756;}
-    .animal_shishiko_1{fill:#FFBB56;}
-    .animal_shishiko_2{fill:#915627;}
-    .animal_shishiko_3{fill:#B66424;}
-    .animal_shishiko_4{fill:#FFA956;}
-    .animal_shishiko_5{fill:#E98537;}
-    .animal_shishiko_6{fill:#F07777;}
-    .animal_shishiko_7{fill:#64420D;}
-    .animal_shishiko_8{fill:#FFFFFF;}
-    .animal_shishiko_9{fill:#7B471F;}
-    .animal_shishiko_10{fill:#FFD28E;}
-    .animal_shishiko_11{fill:#FFD856;}
+    .animal_ele_1 {
+        fill: #F8F1B5;
+    }
 
-    .animal_tsuchi_0{fill:#A99983;}
-    .animal_tsuchi_1{fill:#8E7D68;}
-    .animal_tsuchi_2{fill:#E5C9A8;}
-    .animal_tsuchi_3{fill:#231F20;}
-    .animal_tsuchi_4{fill:#FFFFFF;}
-    .animal_tsuchi_5{fill:#3C2415;}
-    .animal_tsuchi_6{fill:#BE1E2D;}
-    .animal_tsuchi_7{fill:#FDCF8B;}
-    .animal_tsuchi_8{opacity:0.5;fill:#FDCF8B;}
-    .animal_tsuchi_9{fill:#594A42;}
-    .animal_tsuchi_10{opacity:0.5;fill:#A99983;}
+    .animal_ele_2 {
+        fill: #70797E;
+    }
 
-    .animal_roru_0{fill:#CC7A37;}
-    .animal_roru_1{fill:#CC7732;}
-    .animal_roru_2{opacity:0.5;fill:#CC7732;}
-    .animal_roru_3{fill:#DB8A42;}
-    .animal_roru_4{fill:#C1711E;}
-    .animal_roru_5{fill:#F9AB6B;}
-    .animal_roru_6{fill:#603913;}
-    .animal_roru_7{fill:#231F20;}
-    .animal_roru_8{fill:#FFFFFF;}
-    .animal_roru_9{opacity:0.5;fill:#DB8A42;}
+    .animal_ele_3 {
+        opacity: 0.5;
+        fill: #889097;
+        enable-background: new;
+    }
 
-    .animal_tiger_0{fill:#DD7E00;}
-    .animal_tiger_1{fill:#3C2415;}
-    .animal_tiger_2{fill:#FF9A00;}
-    .animal_tiger_3{opacity:0.5;fill:#FF9A00;}
-    .animal_tiger_4{fill:#F8E4D2;}
-    .animal_tiger_5{fill:#FFD28E;}
-    .animal_tiger_6{fill:#231F20;}
-    .animal_tiger_7{fill:#FFFFFF;}
+    .animal_ele_4 {
+        fill: #584942;
+    }
 
-    .animal_kirin_0{fill:#EFBB1D;}
-    .animal_kirin_1{fill:#3C2415;}
-    .animal_kirin_2{fill:#8B5E3C;}
-    .animal_kirin_3{fill:#D19611;}
-    .animal_kirin_4{fill:#341E12;}
-    .animal_kirin_5{opacity:0.5;}
-    .animal_kirin_6{fill:#FFB700;}
-    .animal_kirin_7{fill:#603913;}
-    .animal_kirin_8{fill:#F8E4D2;}
-    .animal_kirin_9{fill:#FFD56C;}
-    .animal_kirin_10{fill:#231F20;}
-    .animal_kirin_11{fill:#FFFFFF;}
-    .animal_kirin_12{opacity:0.5;fill:#603913;}
-    .animal_kirin_13{fill:#BE1E2D;}
-    
-    .animal_hos_0{fill:#D6D6D6;}
-    .animal_hos_1{fill:#EAEAEA;}
-    .animal_hos_2{fill:#2D3958;}
-    .animal_hos_3{fill:#202B44;}
-    .animal_hos_4{opacity:0.5;fill:#EAEAEA;}
-    .animal_hos_5{fill:#C2B59B;}
-    .animal_hos_6{fill:#F9C69D;}
-    .animal_hos_7{fill:#E29B6A;}
-    .animal_hos_8{fill:#231F20;}
-    .animal_hos_9{fill:#FFFFFF;}
-    .animal_hos_10{opacity:0.5;fill:#F9C69D;}
-    .animal_hos_11{fill:#3C2415;}
-    .animal_hos_12{fill:#BE1E2D;}
+    .animal_ele_5 {
+        fill: #96A0A7;
+    }
 
-    #path1 {
-        fill: #FFFFFF;
-        mix-blend-mode: luminosity;
+    .animal_ele_6 {
+        fill: #B9C2CF;
     }
-    
-    #path2 {
-        fill: #FFFFFF;
-        mix-blend-mode: luminosity;
+
+    .animal_ele_7 {
+        fill: #ADB5C0;
     }
-    
-    #path3 {
-        fill: #FFFFFF;
-        mix-blend-mode:  hue;
+
+    .animal_ele_8 {
+        fill: #E9C8B1;
     }
-    #path4 {
-        fill: #FFFFFF;
-        mix-blend-mode:   luminosity;
+
+    .animal_ele_9 {
+        fill: #414042;
     }
-    
-    #path5 {
-        fill: #FFFFFF;
-        mix-blend-mode: color-dodge;
+
+    .animal_ele_10 {
+        fill: #EFF0F0;
     }
-    
-    #path6 {
-        fill: #FFFFFF;
-        mix-blend-mode: luminosity;
+
+    .animal_ele_11 {
+        fill: #040000;
     }
-    
-    #path7 {
-        fill: #FFFFFF;
-        mix-blend-mode: hue;
+
+    .animal_risu_0 {
+        fill: #26324C;
     }
-    #path8 {
-        fill: #FFFFFF;
-        mix-blend-mode:  luminosity;
+
+    .animal_risu_1 {
+        fill: #EAEAEA;
     }
-    text{ font-family: Microsoft JhengHei;font-size: 18px;}
-  
+
+    .animal_risu_2 {
+        opacity: 0.5;
+        fill: #26324C;
+    }
+
+    .animal_risu_3 {
+        fill: #212D42;
+    }
+
+    .animal_risu_4 {
+        fill: #2D3958;
+    }
+
+    .animal_risu_5 {
+        fill: #A99983;
+    }
+
+    .animal_risu_6 {
+        fill: #231F20;
+    }
+
+    .animal_risu_7 {
+        fill: #FFFFFF;
+    }
+
+    .animal_risu_8 {
+        opacity: 0.5;
+        fill: #2D3958;
+    }
+
+    .animal_lion_0 {
+        fill: #FF9756;
+    }
+
+    .animal_lion_1 {
+        fill: #FFBB56;
+    }
+
+    .animal_lion_2 {
+        fill: #915627;
+    }
+
+    .animal_lion_3 {
+        fill: #B66424;
+    }
+
+    .animal_lion_4 {
+        fill: #FFA956;
+    }
+
+    .animal_lion_5 {
+        fill: #E98537;
+    }
+
+    .animal_lion_6 {
+        fill: #F07777;
+    }
+
+    .animal_lion_7 {
+        fill: #64420D;
+    }
+
+    .animal_lion_8 {
+        fill: #FFFFFF;
+    }
+
+    .animal_lion_9 {
+        fill: #7B471F;
+    }
+
+    .animal_lion_10 {
+        fill: #FFD28E;
+    }
+
+    .animal_lion_11 {
+        fill: #FFD856;
+    }
+
+    .animal_tsuchi_0 {
+        fill: #A99983;
+    }
+
+    .animal_tsuchi_1 {
+        fill: #8E7D68;
+    }
+
+    .animal_tsuchi_2 {
+        fill: #E5C9A8;
+    }
+
+    .animal_tsuchi_3 {
+        fill: #231F20;
+    }
+
+    .animal_tsuchi_4 {
+        fill: #FFFFFF;
+    }
+
+    .animal_tsuchi_5 {
+        fill: #3C2415;
+    }
+
+    .animal_tsuchi_6 {
+        fill: #BE1E2D;
+    }
+
+    .animal_tsuchi_7 {
+        fill: #FDCF8B;
+    }
+
+    .animal_tsuchi_8 {
+        opacity: 0.5;
+        fill: #FDCF8B;
+    }
+
+    .animal_tsuchi_9 {
+        fill: #594A42;
+    }
+
+    .animal_tsuchi_10 {
+        opacity: 0.5;
+        fill: #A99983;
+    }
+
+    .animal_roru_0 {
+        fill: #CC7A37;
+    }
+
+    .animal_roru_1 {
+        fill: #CC7732;
+    }
+
+    .animal_roru_2 {
+        opacity: 0.5;
+        fill: #CC7732;
+    }
+
+    .animal_roru_3 {
+        fill: #DB8A42;
+    }
+
+    .animal_roru_4 {
+        fill: #C1711E;
+    }
+
+    .animal_roru_5 {
+        fill: #F9AB6B;
+    }
+
+    .animal_roru_6 {
+        fill: #603913;
+    }
+
+    .animal_roru_7 {
+        fill: #231F20;
+    }
+
+    .animal_roru_8 {
+        fill: #FFFFFF;
+    }
+
+    .animal_roru_9 {
+        opacity: 0.5;
+        fill: #DB8A42;
+    }
+
+    .animal_tiger_0 {
+        fill: #DD7E00;
+    }
+
+    .animal_tiger_1 {
+        fill: #3C2415;
+    }
+
+    .animal_tiger_2 {
+        fill: #FF9A00;
+    }
+
+    .animal_tiger_3 {
+        opacity: 0.5;
+        fill: #FF9A00;
+    }
+
+    .animal_tiger_4 {
+        fill: #F8E4D2;
+    }
+
+    .animal_tiger_5 {
+        fill: #FFD28E;
+    }
+
+    .animal_tiger_6 {
+        fill: #231F20;
+    }
+
+    .animal_tiger_7 {
+        fill: #FFFFFF;
+    }
+
+    .animal_kirin_0 {
+        fill: #EFBB1D;
+    }
+
+    .animal_kirin_1 {
+        fill: #3C2415;
+    }
+
+    .animal_kirin_2 {
+        fill: #8B5E3C;
+    }
+
+    .animal_kirin_3 {
+        fill: #D19611;
+    }
+
+    .animal_kirin_4 {
+        fill: #341E12;
+    }
+
+    .animal_kirin_5 {
+        opacity: 0.5;
+    }
+
+    .animal_kirin_6 {
+        fill: #FFB700;
+    }
+
+    .animal_kirin_7 {
+        fill: #603913;
+    }
+
+    .animal_kirin_8 {
+        fill: #F8E4D2;
+    }
+
+    .animal_kirin_9 {
+        fill: #FFD56C;
+    }
+
+    .animal_kirin_10 {
+        fill: #231F20;
+    }
+
+    .animal_kirin_11 {
+        fill: #FFFFFF;
+    }
+
+    .animal_kirin_12 {
+        opacity: 0.5;
+        fill: #603913;
+    }
+
+    .animal_kirin_13 {
+        fill: #BE1E2D;
+    }
+
+    .animal_hos_0 {
+        fill: #D6D6D6;
+    }
+
+    .animal_hos_1 {
+        fill: #EAEAEA;
+    }
+
+    .animal_hos_2 {
+        fill: #2D3958;
+    }
+
+    .animal_hos_3 {
+        fill: #202B44;
+    }
+
+    .animal_hos_4 {
+        opacity: 0.5;
+        fill: #EAEAEA;
+    }
+
+    .animal_hos_5 {
+        fill: #C2B59B;
+    }
+
+    .animal_hos_6 {
+        fill: #F9C69D;
+    }
+
+    .animal_hos_7 {
+        fill: #E29B6A;
+    }
+
+    .animal_hos_8 {
+        fill: #231F20;
+    }
+
+    .animal_hos_9 {
+        fill: #FFFFFF;
+    }
+
+    .animal_hos_10 {
+        opacity: 0.5;
+        fill: #F9C69D;
+    }
+
+    .animal_hos_11 {
+        fill: #3C2415;
+    }
+
+    .animal_hos_12 {
+        fill: #BE1E2D;
+    }
+
+
+
+    #home {
+        #path1 {
+            fill: #dd7426;
+            opacity: 0.7;
+        }
+
+        #path2 {
+            fill: rgba(1, 231, 22, .6);
+            ;
+        }
+
+        #path3 {
+            fill: rgba(108, 243, 225, .6)
+        }
+
+        #path4 {
+            fill: rgb(240, 226, 5);
+
+            /* mix-blend-mode:   hard-light ; */
+
+            transition: .5s;
+        }
+
+        text {
+            font-family: Microsoft JhengHei;
+            font-size: 16px;
+            transition: .2s;
+            fill: #333333;
+        }
+
+        &:hover {
+            text {
+                fill: #efefef;
+            }
+
+            #path1 {
+                fill: rgba(45, 51, 185, .7);
+
+            }
+
+            #path2 {
+                fill: rgb(202, 18, 89);
+
+            }
+
+            #path3 {
+                fill: rgb(247, 211, 219);
+            }
+
+            #path4 {
+                fill: #4c3223;
+
+            }
+        }
+    }
+
+
+    #back {
+        #path5 {
+            fill: #dd7426;
+            opacity: 0.7;
+        }
+
+        #path6 {
+            fill: rgba(1, 231, 22, .6);
+            ;
+        }
+
+        #path7 {
+            fill: rgba(108, 243, 225, .6);
+
+
+        }
+
+        #path8 {
+            fill: rgb(198, 36, 3);
+
+            /* mix-blend-mode:   hard-light ; */
+
+            transition: .5s;
+        }
+
+        text {
+            font-family: Microsoft JhengHei;
+            font-size: 16px;
+            transition: .2s;
+            fill: #333333;
+        }
+
+        &:hover {
+            text {
+                fill: #efefef;
+            }
+
+            #path5 {
+                fill: rgba(45, 51, 185, .7);
+
+            }
+
+            #path6 {
+                fill: rgb(202, 18, 89);
+
+            }
+
+            #path7 {
+                fill: rgb(247, 211, 219);
+            }
+
+            #path8 {
+                fill: #4c3223;
+
+            }
+        }
+    }
+
+
+
+}

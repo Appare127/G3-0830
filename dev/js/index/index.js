@@ -157,13 +157,13 @@ function reHw() {
     });
     blob4 = createBlob({
         element: document.querySelector("#path4"),
-        numPoints: 10,
+        numPoints: 100,
         centerX: homeX + 5,
         centerY: homeY,
         minRadius: 20,
         maxRadius: 22,
-        minDuration: 1000,
-        maxDuration: 1000
+        minDuration: 1.5,
+        maxDuration: 2
     });
     blob5 = createBlob({
         element: document.querySelector("#path5"),
@@ -192,18 +192,18 @@ function reHw() {
         centerY: backY,
         minRadius: 22,
         maxRadius: 28,
-        minDuration: 1.5,
-        maxDuration: 2.5
+        minDuration: 3,
+        maxDuration: 4
     });
     blob8 = createBlob({
         element: document.querySelector("#path8"),
-        numPoints: 10,
+        numPoints: 150,
         centerX: backX + 5,
         centerY: backY,
         minRadius: 20,
         maxRadius: 22,
-        minDuration: 1000,
-        maxDuration: 1000
+        minDuration: 3,
+        maxDuration: 4
     });}
 function createBlob(p) {
     var s = [];

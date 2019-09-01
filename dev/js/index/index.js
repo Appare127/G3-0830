@@ -197,7 +197,7 @@ function reHw() {
     });
     blob8 = createBlob({
         element: document.querySelector("#path8"),
-        numPoints: 150,
+        numPoints: 100,
         centerX: backX + 5,
         centerY: backY,
         minRadius: 20,

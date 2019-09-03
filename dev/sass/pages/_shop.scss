@@ -1,38 +1,6 @@
 $lblue:#d8ecea;
 
-@mixin pseudo ($name,$content,$w,$h,$display:block){
-  &:#{$name}{
-    content:'#{$content}';
-    width: $w;
-    height:$h ;
-    display:$display;
-    @content
-  }  
-}
 
-$viewpoints:(
- 
-    xlarge:1200px,
-    large:992px,
-    medium:768px,
-    small:767px
-);
-
-@mixin responds($respond){
-    @each $breakpoint,$width in $viewpoints{
-        @if $respond == $breakpoint{
-            @if $respond ==small{
-                @media all and (max-width:$width){
-                    @content;
-                }
-            }@else{
-                @media all and (min-width:$width){
-                    @content;
-                }
-            }
-        }
-    }
-}
 // ====================================
 .shop{
     background-color:$lblue ;
@@ -45,32 +13,135 @@ $viewpoints:(
     }
     
     .banner{
-        text-align: center;
-        height: 500px;
-        h1{
-            font-size: $h1_fz;
-            background-image: url('../img/shop/titleCloud.png');
-            background-repeat: no-repeat;
-            // width: 420px;
-            height: 203px;
+        position:relative;
+        padding-top: 70px;
+        overflow: hidden;
+        @media screen and (min-width:1200px){
             margin: auto;
-        }
-        p{
-            font-size: $lg_fz;
+            padding-top: 120px;
+            padding-bottom: 30px; 
         }
     }
+
+    .banner_title{
+        font-size: 0;
+        width: 60%;
+        margin: auto;
+        position: relative;
+        background-image: url(../img/header/banner_cloud.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 40px 0px 30px 0px;
+        @media screen and (min-width:1200px){
+            width: 30%;
+            padding: 60px 0px 50px 0px;
+
+        }
+        .icon_l{
+            width: 25px;
+            height: 25px;
+        }
+        .icon_r{
+            width: 25px;
+            height: 25px;
+        }
+        .title{
+            margin: 0px 10px;
+            @media screen and (min-width:1200px){
+                margin: 0px 20px;
+            }
+        }
+    }
+    
+
+//動物跟那句話
+    .banner_text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .guide_animal{
+            width: 20%;
+            position:relative;
+            margin: 30px;
+            animation:guide_animal 2s linear infinite;
+            img{
+                width: 100%;
+            }
+            @include responds (small){
+                display:none;
+            }
+        }
+        @keyframes guide_animal{
+            0%{top:10px};
+            50%{top: 0px}
+            100%{top:10px};
+        }
+        .guide_animal_animal{
+            position:absolute;
+            width: 40%;
+            left: 50%;
+            transform: translate(-50%,0);
+            bottom: 50%;
+        }
+    }
+
 }
 
 
 
 // 背景會飄的雲跟熱氣球
 .shop {
+    // overflow: hidden;
     .cloud{
         width: 150px;
+        position:absolute;
+        @include responds (small){
+            display:none;
+        }
     }
+
+    .cloudl{
+        top: 60%;
+        left: 10%;
+    }
+    .cloudm{
+        top: 80%;
+        right: 25%;
+    }
+    .cloudr{
+        top: 40%;
+        right: 10%;
+    }
+
+    .cloudbl{
+        top: 13%;
+        left: 3%;
+    }
+
+    .cloudbr{
+        top: 21%;
+        right: 4%;
+    }
+
     .balloon{
         width: 100px;
+        position:absolute;
+        top: 50%;
+        // animation: floating 10s infinite;
+        @include responds (small){
+            display:none;
+        }
     }
+    // @keyframes floating{
+    //     0%{left:0}
+    //     50%{left:100%}
+    //     0%{left:0}
+    // }
 }
 
 // ===========================
@@ -83,6 +154,21 @@ $viewpoints:(
     background-repeat: no-repeat;
     padding-bottom: 100px;
     position:relative;
+
+    //tent        
+    .tent{
+        position:relative;
+        top: 45px;
+        z-index: 1;
+        width:100%;
+        max-width:1200px;
+        margin: auto;
+        img{
+            width: 100%;
+        }
+    }
+
+
     .container{
         @include responds(medium){
             padding: 0 20px;
@@ -90,30 +176,27 @@ $viewpoints:(
         @include responds(xlarge){
             padding: 0 50px;
         }
-        
-        @include pseudo(before,null,100%,0){
-            background-image: url(../img/shop/tent.png);
-            background-repeat: no-repeat;
-            background-position:center;
-            position:absolute;
-            z-index: 1;
-            top: 0%;
-            left: 0;
-            padding-bottom: 180px;
-            background-size: cover;
-            @include responds(medium){
-                padding-bottom: 150px;
-            }
+    }
+
+//房子裡面那塊黃色
+    .wrap{
+        background-color: #fdf6e7;
+        position:relative;
+        left: 0;
+        border-radius:40px 52px 40px 40px;
+        padding: 50px 10px 10px 10px;
+        @include responds(medium){
+            padding:100px 10px 10px 10px;
+            border-radius:0 40px;
+            box-shadow: 7px 7px 0 1px #777;
+        }
+
+        @include responds(large){
+            padding-top: 120px;
         }
     }
-//房子裡面那塊
-    .wrap{
-        padding: 250px 10px 10px 10px;
-        background-color: #fdf6e7;
-        border-radius:160px 160px 40px 40px;
-        box-shadow: 7px 7px 0 1px #777;
-        position:relative;
-    }
+
+    
 }
 
 //lights
@@ -122,12 +205,11 @@ $viewpoints:(
         display:flex;
         position:absolute;
         left: 0;
-        top: 150px;
+        top: 28px;
         @include responds(medium){
-            top: 140px;
+            top: 30px;
         }
         
-       
         img{
             width: (100% / 3);
         }
@@ -135,49 +217,79 @@ $viewpoints:(
 }
 
 //選圖案
-.choose_pic{
-    h2{
-        display:none;
-    }
-    .intro{
-        padding: 10px;
-    }
-}
-
-.choose_pic_wrap{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    border-bottom:3px solid brown;
-    
-    .item{
-        width: 40%;
-        box-sizing:border-box;
-        padding: 20px;
-        cursor: pointer;
-        text-align: center;
-        @include responds(medium){
-            width: 15%;
-            img{
-                width: 100%;
+.shop{
+    .choose_pic{
+        h2{
+            display:none;
+        }
+        .intro{
+            padding: 10px;
+            @include responds(small){
+                text-align: center;
+                padding-top: 30px;
             }
         }
-        p{
-            padding: 10px 0;
-            width: 60%;
-            margin: auto;
+    }
+
+    .choose_pic_wrap{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        border-bottom:3px solid brown;
+
+        .item{
+            width: 40%;
+            box-sizing:border-box;
+            padding: 20px;
+            cursor: pointer;
             text-align: center;
+            @include responds(medium){
+                width: 20%;
+            }
+
+            p{
+                padding: 10px 0;
+                text-align: center;
+                @include responds(medium){
+                    margin: auto;
+                    width: 60%;
+                
+                }
+            }
+    }
+
+   
+        
+       
+    //包背景&動物圖的外框
+        .pic{
+            position:relative;
         }
     }
-  
-}
+
+    .shop_animal_bg{
+        width: 100%;
+    }
+
+    .shop_animal{
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,0);
+        width: 50%;
+    }
+
 //選擇背景圖片
 .choose_bgpic{
     margin: 30px 0;
     .intro{
         padding: 10px;
+        @include responds(small){
+            text-align: center;
+        }
     }
 }
+
 //選擇商品
 .choose_product{
     display:flex;
@@ -230,7 +342,9 @@ $viewpoints:(
             height: 25px;
             background-color:#5f4f23;
             border:none;
-            border-radius: 5px
+            border-radius: 5px;
+            outline:none;
+            line-height: 1;
         }
         input{
             padding:5px 5px;  border:0 none;
@@ -261,9 +375,22 @@ $viewpoints:(
 
 .prod_img{
     position:relative;
+    width: 80%;
+    margin: auto;
+    @include responds(medium){
+        width: 100%;
+    }
     .pic_chosen{
         position:absolute;
         width: 30%;
+    }
+
+    .shop_animal{
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,0);
+        width: 50%;
     }
 }
 
@@ -278,7 +405,7 @@ $viewpoints:(
 }
 
 .pic_chosen_cup{
-    @include picChosen(37%,0,10%)
+    @include picChosen(37%,0,18%)
 }
 
 .pic_chosen_hat{
@@ -287,6 +414,27 @@ $viewpoints:(
 
 .pic_chosen_pillow{
     @include picChosen(34%,0,0)
+}
+.btn{
+    padding-top: 20px;
+    @include btn_cloudp (50%);
+    @include btn_cloudb (50%);
+    .btn_cloudp,.btn_cloudb{
+        margin-bottom:7px ;
+        padding: 6px 0;
+        @include responds(medium){
+            padding: 1px 0;
+            margin-bottom: 5px;
+
+        }
+        @include responds(xlarge){
+            padding: 2px 0;
+            width: 40%;
+            margin: 0 5px;
+
+        }
+    }
+}
 }
 // =====================================
 // 商品詳情
@@ -310,7 +458,7 @@ $viewpoints:(
        @include responds(large){
         width:30%;
    }
-        background-color: lightblue;
+        background-color: $lblue;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);

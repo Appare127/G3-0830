@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     @@include('template/csslink.html')
 
     <title>改造動物</title>
@@ -14,9 +16,10 @@
 
     <section class="modify_banner">
         <div class="container">
-            <div class="cloud">
-                <img src="img/modify/banner_cloud.png" alt="">
-                <h1>動物改造</h1>
+            <div class="banner_cloud">
+                <img class="icon_l" src="img/header/banner_icon_l.png" alt="">
+                <h1 class="title">動物改造</h1>
+                <img class="icon_r" src="img/header/banner_icon_r.png" alt="">
             </div>
             <div class="about">
                 <img src="img/modify/guide_animal.png" alt="">
@@ -35,8 +38,30 @@
                     <input type="text" name="" id="">
                 </div>
 
-                <div class="pic">
-                    <img src="img/modify/example_animal.png" alt="">
+                <div class="pic_box">
+
+                    <img class="parts_pic" src="img/modify/p_tail_giraffe.png" alt="">
+
+
+                    <img class="foot_pic" src="img/modify/p_foot_giraffe.png" alt="">
+                    <!-- <img class="foot_pic" src="img/modify/p_foot_cmel.png" alt=""> -->
+                    <!-- <img class="foot_pic" src="img/modify/p_foot_elephant.png" alt=""> -->
+                    <!-- <img class="foot_pic" src="img/modify/p_foot_tiger.png" alt=""> -->
+
+                    
+                    <img class="body_pic" src="img/modify/p_body_giraffe.png" alt="">
+                    <!-- <img class="body_pic" src="img/modify/p_body_elephant.png" alt=""> -->
+                    <!-- <img class="body_pic" src="img/modify/p_body_zebar.png" alt=""> -->
+                    <!-- <img class="body_pic" src="img/modify/p_body-tiger.png" alt=""> -->
+
+                    
+                    <img class="head_pic" src="img/modify/p_head_giraffe.png" alt="">
+                    <!-- <img class="head_pic" src="img/modify/p_head_elephant.png" alt=""> -->
+                    <!-- <img class="head_pic" src="img/modify/p_head_lion.png" alt=""> -->
+                    <!-- <img class="head_pic" src="img/modify/p_head_tiger.png" alt=""> -->
+                
+
+
                 </div>
 
                 <div class="tool">
@@ -55,44 +80,111 @@
                         下一步
                         @@include('template/btn_sp.html')
                     </a>
+
                     <a href="#" class="btn_cloudb">
                         修改
                         @@include('template/btn_sp.html')
                     </a>
-                </div>
 
+                    <a href="#" class="btn_cloudy">
+                        背景
+                        @@include('template/btn_sp.html')
+                    </a>
+                </div>
             </div>
 
 
             <div class="select_box">
-                <div class="button_box">
-                    <ul class="button_ul">
-                        <li class="button_li"><a href="#" class="button btn_head">頭部</a></li>
-                        <li class="button_li"><a href="#" class="button btn_body">身體</a></li>
-                        <li class="button_li"><a href="#" class="button btn_foot">腳部</a></li>
-                        <li class="button_li"><a href="#" class="button btn_fit">配件</a></li>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                
-                <div class="part_box">
-                    <div class="part_scroll">
-                        <div class="part_wrap">
-                            <item class="part_item">
-                                <img src="img/modify/head_giraffe.png" alt="">
-                            </item>
-                            <item class="part_item">
-                                    <img src="img/modify/head_elephant.png" alt="">
-                            </item>
-                            <item class="part_item">
-                                    <img src="img/modify/head_lion.png" alt="">
-                            </item>
-                            <item class="part_item">
-                                    <img src="img/modify/head_tiger.png" alt="">
-                            </item>
-                        </div>
-                    </div>
-                </div>
+                <ul class="button_ul">
+                    <li class="part_button">
+                        <label for="btn_head">頭部</label>
+                        <input type="radio" name="partlist" id="btn_head" checked>
+                        <ul class="part_wrap">
+                            <li>
+                                <img class="picon" class="picon" src="img/modify/head_giraffe.png" alt="">
+                                <p>長頸鹿頭</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/head_elephant.png" alt="">
+                                <p>大象頭</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/head_lion.png" alt="">
+                                <p>獅子頭</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/head_tiger.png" alt="">
+                                <p>老虎頭</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="part_button">
+                        <label for="btn_body">身體</label>
+                        <input type="radio" name="partlist" id="btn_body">
+                        <ul class="part_wrap">
+                            <li>
+                                <img class="picon" src="img/modify/body_giraffe.png" alt="">
+                                <p>長頸鹿身體</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/body_elephant.png" alt="">
+                                <p>大象身體</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/body_zebra.png" alt="">
+                                <p>斑馬身體</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/body_tiger.png" alt="">
+                                <p>老虎身體</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="part_button">
+                        <label for="btn_foot">腳部</label>
+                        <input type="radio" name="partlist" id="btn_foot">
+                        <ul class="part_wrap">
+                            <li>
+                                <img class="picon" src="img/modify/foot_giraffe.png" alt="">
+                                <p>長頸鹿腳</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/foot_elephant.png" alt="">
+                                <p>大象腳</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/foot_bird.png" alt="">
+                                <p>鳥腳</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/foot_cmel.png" alt="">
+                                <p>駱駝腳</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="part_button">
+                        <label for="btn_parts">尾巴</label>
+                        <input type="radio" name="partlist" id="btn_parts">
+                        <ul class="part_wrap">
+                            <li>
+                                <img class="picon" src="img/modify/tail_giraffe.png" alt="">
+                                <p>長頸鹿尾巴</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/tail_elephant.png" alt="">
+                                <p>大象尾巴</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/tail_skunk.png" alt="">
+                                <p>臭鼬尾巴</p>
+                            </li>
+                            <li>
+                                <img class="picon" src="img/modify/tail-tiger.png" alt="">
+                                <p>老虎尾巴</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
 
@@ -132,5 +224,7 @@
 
     @@include('template/login.html')
     @@include('template/footer.html')
+
+    <script src="js/modify/modify.js"></script>
 </body>
 </html>

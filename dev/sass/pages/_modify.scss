@@ -8,38 +8,42 @@
 
 .modify_body{
     background-color: #dbde7f;
-    margin-top: 54px;
-
     background-image: url(../img/modify/modify_s_bg.png);
     background-position-x: center;
     background-size: contain;
     background-repeat: no-repeat;
-
 }
 
 
 .modify_banner{
-
+    padding-top: 70px;
     .container{
-        width: auto;
+        
     }
-    .cloud{
+    .banner_cloud{
         font-size: 0;
-        width: 40%;
+        width: 60%;
         margin: auto;
         position: relative;
-        text-align: center;
-        img{
-            width: 100%;
+        background-image: url(../img/header/banner_cloud.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 40px 0px 30px 0px;
+        .icon_l{
+            width: 25px;
+            height: 25px;
         }
-        h1{
-            height: 24px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            margin: auto;
+        .icon_r{
+            width: 25px;
+            height: 25px;
+        }
+        .title{
+            margin: 0px 10px;
         }
     }
     .about{
@@ -61,6 +65,7 @@
 
 
 .modify{
+
     .container{
         width: auto;
     }
@@ -79,27 +84,38 @@
             }
         }
 
-        .pic{
+        .pic_box{
             position: relative;
-            background-image: url(../img/modify/platform.png);
+            background-image: url(../img/modify/home_modify_b.png);
             background-repeat: no-repeat;
-            background-size: 50%;
+            background-size: 70%;
             background-position-x: center;
             background-position-y: bottom;
-            padding-bottom: 60%;
+            outline: 3px dotted #ccc;
+            width: 70%;
+            padding-bottom: 70%;
+            margin: auto;
             img{
                 position: absolute;
-                width: 80%;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                margin: auto;
             }
+
+            .foot_pic{
+                width: 100%;
+            }
+
+            .body_pic{
+                width: 100%;
+            }
+
+            .head_pic{
+                width: 100%;
+            }
+
         }
 
         .tool{
             text-align: center;
+            margin-top: 10px;
             img{
                 display: inline-block;
                 vertical-align: middle;
@@ -120,75 +136,81 @@
             .btn_cloudb{
                 margin: 10px 20px;
             }
+            @include btn_cloudy(100px,$col_btn_orange);
+            .btn_cloudb{
+                margin: 10px 20px;
+            }
         }
     }
 
     .select_box{
         width: 100%;
-        .button_box{
+        font-size: 0;
+        padding-bottom: 90%;
+        .button_ul{
+            width: calc(100% - 20px);
+            margin: 10px;
             text-align: center;
-            font-size: 0;
-            padding-bottom: 15px;
-            margin: 25px 10px 0px 10px;
-            .button_li{
-                width: 25%;
-                float: left;
-                font-size: 0;
-                .button{
-                    display: inline-block;
-                    vertical-align: middle;
-                    margin: 0 10px;
-                    padding: 5px;
-                    width: 60%;
-                    border-radius: 15px;
-                    background-color: $col_modify_box;
-                    position: relative;
-                    text-align: center;
-                    color: #333333;
-                    text-decoration: none;
-                    box-shadow: 0px 2px 0px 1px $col_modify_boxshadow;
+            position: relative;
+        }
 
-                }
-                .button::before{
-                    content: '';
-                    border-top: 20px solid $col_modify_box;
-                    border-right: 8px solid transparent;
-                    border-left: 8px solid transparent;
-                    border-bottom: 0px solid $col_modify_box;
-                    position: absolute;
-                    left: 13px;
-                    top: 30px;
+        .part_button{
+            // width: 15%;
+            margin: 10px;
+            padding: 5px 10px;
+            display: inline-block;
+            font-size: 16px;
+            text-align: center;
+            background-color: $col_modify_box;
+            border-radius: 15px 15px 0px 0px;
+            border-top: 3px solid $col_modify_boxshadow;
+            border-left: 3px solid $col_modify_boxshadow;
+            border-right: 3px solid $col_modify_boxshadow;
+
+            label{
+                color: $col_black;
+                cursor: pointer;
+            }
+
+            input{
+                display: none;
+                &:checked ~ ul{
+                    display: flex;
                 }
             }
-        }
-        .part_box{
-            width: 95%;
-            box-sizing: border-box;
-            margin: 0px 10px 10px 10px;
-            border: 5px solid $col_modify_box;
-            background-color: #fff;
-            border-radius: 30px;
-            box-shadow: 2px 2px 0px 3px $col_modify_boxshadow;
 
             .part_wrap{
-                width: 100%;
-                margin: auto;
+                position: absolute;
+                width: 95%;
                 display: flex;
                 flex-wrap: wrap;
-
-                .part_item{
-                    box-sizing: border-box;
+                top: 45px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                background-color: $col_white;
+                display: none;
+                border: 5px solid $col_modify_box;
+                border-radius: 30px;
+                box-shadow: 2px 2px 0px 3px $col_modify_boxshadow;
+                li{
                     width: 50%;
-                    height: calc(20vh);
-                    text-align: center;
-                    padding: 20px;
+                    box-sizing: border-box;
+                    padding: 10px;
                     img{
-                        height: 100%;
-
+                        width: 70%;
+                        cursor: pointer;
+                        margin-top: 10px;
+                        &:hover {
+                            filter: drop-shadow(0px 0px 10px $col_btn_pink);
+                        }
                     }
                 }
             }
         }
+        
+
+
     }
     .info_box{
         box-sizing: border-box;
@@ -300,7 +322,7 @@
     .modify_body{
         background-image: url(../img/modify/modify_bg.png);
         background-size: cover;
-        margin-top: 100px;
+
     }
 
     .container{
@@ -310,13 +332,17 @@
 
     .modify_banner{
         margin: auto;
+        padding-top: 120px;
         padding-bottom: 30px;
 
-        .cloud{
-            width: 20%;
-            h1{
-                height: 36px;
+        .banner_cloud{
+            width: 30%;
+            padding: 60px 0px 50px 0px;
+
+            .title{
+                margin: 0px 20px;
             }
+
         }
         .about{
             img{

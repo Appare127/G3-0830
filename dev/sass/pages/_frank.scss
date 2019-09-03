@@ -6,60 +6,52 @@
     background-position-y: -230px;
     margin: auto;
     position: relative;
+    overflow-x: hidden;
     
-}
-.frank{
-    width: 100%;
-    
-    margin:  auto;
-    overflow: hidden;
-   
-    .frank_container{
-        max-width: 1200px;
-        width: 100%;
-        
-        padding: 10px;
-        box-sizing: border-box;
-        margin: auto;
-      
-        .frank_title{
-            min-width: 350px;
-            width: 100%;
-            
-            margin: 14% auto 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            img{
-                max-width: 350%;
-                width:50%;
-                height: 50%;
-                margin: auto;
-            
-            }
-            .frank_cloud{
-                position: absolute;
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                img{
-                    width: 10%;
-                    height: 10%;
-                    margin: auto;
-                }
-                h1{
-                    
-                    font-weight:800;
-                }
-            }
-        }
+    .world{
+        position: fixed;
+        z-index: -5;
     }
 }
+
+.franks_banner{
+    margin: auto;
+    padding-top: 120px;
+    padding-bottom: 30px;
+    
+    .container{
+        
+    }
+    .banner_cloud{
+        font-size: 0;
+        width: 30%;
+        margin: auto;
+        position: relative;
+        background-image: url(../img/header/banner_cloud.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 60px 0px 50px 0px;
+
+        .icon_l{
+            width: 25px;
+            height: 25px;
+        }
+        .icon_r{
+            width: 25px;
+            height: 25px;
+        }
+        .title{
+            margin: 0px 20px;
+        }
+    }
+    
+}
+
 
 
 
@@ -1149,9 +1141,43 @@
 
 @media screen and (max-width:767px){
     .frank_body{
-       background-position-y: 0; .frank_container{
-        padding: 0;
+       background-position-y: 0; 
+       .frank_container{
+         padding: 0;
+         
+        }
     }
+    .franks_banner{
+        padding-top: 70px;
+        .container{
+            
+        }
+        .banner_cloud{
+            font-size: 0;
+            width: 60%;
+            margin: auto;
+            position: relative;
+            background-image: url(../img/header/banner_cloud.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 40px 0px 30px 0px;
+            .icon_l{
+                width: 25px;
+                height: 25px;
+            }
+            .icon_r{
+                width: 25px;
+                height: 25px;
+            }
+            .title{
+                margin: 0px 10px;
+            }
+        }
     }
    
 
@@ -1611,7 +1637,7 @@
 
         .frank_message_container{
             width: 90%;
-            height: 80%;
+            height: 85%;
         }
         .frank_message_title{
 

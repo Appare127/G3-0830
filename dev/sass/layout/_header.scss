@@ -3,7 +3,7 @@
 .main_menu{
 
     min-width: 0;
-    background-color: rgba(240,240,240,0.8);
+    // background-color: rgba(240,240,240,0.8);
     padding: 5px 10px 5px 10px;
     position: fixed;
     top: 0;
@@ -192,23 +192,31 @@
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.header{
+.header_top{
     position: absolute;
-    // top: 100px;
+    top: 0px;
+    left: 0;
     width: 100%;
+    height: 50px;
     z-index: -1;
+    background-color: rgba(255,255,255,0.9);
 }
 
 
-.waves {
-    position:relative;
+.header{
+    position: absolute;
+    top: 35px;
+    left: 0;
     width: 100%;
-    height:80px;
-    margin-bottom:-7px; /*Fix for safari gap*/
-  }
-
+    z-index: -1;
+    .waves {
+        position:relative;
+        width: 100%;
+        height:70px;
+        margin-bottom:-7px; /*Fix for safari gap*/
+      }
+}
   /* Animation */
-  
   .parallax > use {
     animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
   }
@@ -242,6 +250,7 @@
       height:80px;
     }
   }
+
 
 
 

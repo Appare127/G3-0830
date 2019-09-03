@@ -1,0 +1,45 @@
+
+
+
+.home_header{
+    .container{
+        .home_animal{
+            position: absolute;
+            z-index: 1;
+        }
+        .home_animal_01{
+            left: 10%;
+            top: 10%;
+           
+         }
+         .home_animal_02{
+            left: 20%;
+            top: 20%;
+          
+         }
+         .home_animal_03{
+            left: 25%;
+            top: 10%;
+         }
+         .home_animal_04{
+            left: 50%;
+            top: 23%;
+         }
+         .home_animal_05{
+            left: 75%;
+            top: 10%;
+         }
+    }  
+}  
+@media screen and (min-width: 1200px){
+
+}
+@media screen and (min-width: 992px){
+
+}
+@media screen and (min-width: 768px){
+
+}
+@media screen and (max-width: 767px){
+  
+}
